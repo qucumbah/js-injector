@@ -1,0 +1,22 @@
+{
+  "name": "JavaScript Injector",
+  "description": "Inject any javascript into any page",
+  "version": "1.0",
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "img/logo.png"
+  },
+  "background": {
+    "scripts": ["background.js", "hot-reload.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+    "js": ["jquery-3.4.1.min.js", "injector.js"]
+  }],
+  "manifest_version": 2
+}
